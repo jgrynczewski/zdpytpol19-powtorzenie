@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Widok listy</title>
+</head>
+<body>
+    <ul>
+    {% for book in object_list %}
+        <li>
+            {{ book }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
