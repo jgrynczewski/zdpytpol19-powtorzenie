@@ -17,3 +17,16 @@ class Book(models.Model):
         return self.title
 
 
+class Person(models.Model):
+    name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class Loan(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.book} przez {self.person}"
