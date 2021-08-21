@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ksiązka {{ book }}</title>
+</head>
+<body>
+    <h2>Książka nr {{ book.id }}</h2>
+    <h3>Tytuł: {{ book.title }}</h3>
+    <h3>Kategoria: {{ book.get_category_display }}</h3>
+    <h3>Cena: {{ book.price }}$</h3>
+</body>
+</html>
