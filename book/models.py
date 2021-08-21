@@ -30,7 +30,7 @@ class Person(models.Model):
 
 
 class Loan(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='loans')
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
 
     def __str__(self):

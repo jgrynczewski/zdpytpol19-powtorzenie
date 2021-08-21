@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona domowa</title>
+</head>
+<body>
+    Witaj,
+    {% if user.is_authenticated %}
+        {{ user }} w aplikacji Book!
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="submit" value="Wyloguj">
+        </form>
+
+    {% else %}
+        nieznajomy w aplikacji Book!
+
+    {% endif %}
+
+
+
+</body>
+</html>

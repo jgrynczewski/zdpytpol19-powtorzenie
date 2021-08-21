@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -39,3 +40,17 @@ class BookUpdateView(UpdateView):
 class BookDeleteView(DeleteView):
     model = Book
     success_url = reverse_lazy('book:book-list')
+
+
+def welcome(request):
+    return render(
+        request,
+        'book/welcome.html'
+    )
+
+
+def bye(request):
+    return render(
+        request,
+        'book/bye.html'
+    )
