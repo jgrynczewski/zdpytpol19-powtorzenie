@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuń książkę</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <p>Czy napewno usunąć książkę {{ book }}?</p>
+        <input type="submit" value="Potwierdź">
+    </form>
+</body>
+</html>

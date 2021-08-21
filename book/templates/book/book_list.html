@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Widok listy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
     <ul>
     {% for book in object_list %}
-        <li>
-            {{ book }}
+        <li style="margin: 1%;">
+            <a href="{% url 'book:book-detail' book.id %}">{{ book }}</a>
+            <form method="get" action="{% url 'book:book-delete' book.id %}" style="display: inline;">
+                {% csrf_token %}
+                <input type="submit" value="Usuń" class="btn btn-danger">
+            </form>
         </li>
     {% endfor %}
     </ul>
